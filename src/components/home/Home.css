@@ -1,0 +1,46 @@
+.home_img{
+  width: 70%;
+}
+.table_ipl{
+margin-top: 70px;
+margin-left: 185px;
+}
+.table_ipl>h3{
+  margin-bottom: 30px;
+}
+.table_ipl .ag-body-horizontal-scroll-viewport{
+  overflow-x: hidden;
+}
+.table_ipl .ag-body-viewport.ag-layout-normal{
+  overflow-y: hidden;
+}
+.ipl_winner{
+  margin-left: 700px;
+  margin-top: -454px;
+}
+.ipl_winner>h3{
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width:600px){
+  .table_ipl{
+      margin-left: 0;
+      height: 320px;
+      width: 400px;
+  }
+}
+@media screen and (max-width:600px){
+  .ipl_winner{
+      margin-top: 150px;
+      margin-left: 0px;
+
+  }
+}
+
+
+@media screen and (max-width:600px){
+  .ag-theme-alpine{
+      height: 300px;
+      width: 300px;
+  }
+}

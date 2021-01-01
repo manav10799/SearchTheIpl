@@ -1,0 +1,41 @@
+.card_player{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
+}
+.card_player .card-img-top{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5%;
+}
+.grow {
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+    height: 49px;
+    margin: 5px 1% 5px 1%;
+    float: left;
+    position: relative;
+    transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    text-align: left;
+    overflow: hidden;
+    
+  }
+  .grow:hover {
+    height: 190px;
+    color: rgb(13, 143, 230);
+  }
+
+
+.card_play{
+    font-family: 'Bree Serif', serif; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+.card_player .MuiSvgIcon-root{
+  margin-left: 170px;
+  margin-top: -70px;
+}
+

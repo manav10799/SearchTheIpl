@@ -1,0 +1,22 @@
+.deck_1 .card-img-top{
+    height: 320px;
+    width: 18rem;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
+}
+.deck_1{
+    overflow-x: hidden;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 50px;
+}
+.deck_2 .card{
+    margin-bottom: 80px;
+}
+.deck_1 .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
+}
+.deck_2 .card {
+    text-align: center;
+}
