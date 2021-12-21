@@ -29,13 +29,13 @@
 
       if (Math.abs(actualHeight - currentHeight) > 15) {
         var hostUrl = window.location.hash.substring(1);
-        console.log(hostUrl);
+        // console.log(hostUrl);
         
         hostUrl += "#";
         hostUrl += 'frameId=' + frameId;
         hostUrl += '&';
         hostUrl += 'height=' + actualHeight.toString();
-        console.log(hostUrl);
+        // console.log(hostUrl);
 
         window.top.location = hostUrl;
       }
@@ -58,57 +58,19 @@
 
     function getBodyHeight() {
 
-      var height,
-        scrollHeight,
-        offsetHeight;
-
-      // if (document.height) {
-
-      //   height = document.height;
-
-      // } else if (document.body) {
-
-      //   if (document.body.scrollHeight) {
-      //     height = scrollHeight = document.body.scrollHeight;
-      //     console.log(height);
-      //   }
-
-        // if (document.body.offsetHeight) {
-        //   height = offsetHeight = document.body.offsetHeight;
-        // }
-
-        // if (scrollHeight && offsetHeight) {
-        //   height = Math.max(scrollHeight, offsetHeight);
-        // }
-      // }
-
+      let height;
       if (document.body.scrollHeight) {
-          height = scrollHeight = document.body.scrollHeight;
+          height = document.body.scrollHeight;
           console.log(height);
         }
 
       return height;
     }
 
-    // function getViewPortHeight() {
-
-    //   var height = 0;
-
-    //   if (window.innerHeight) {
-    //     height = window.innerHeight - 18;
-    //   } else if ((document.documentElement) && (document.documentElement.clientHeight)) {
-    //     height = document.documentElement.clientHeight;
-    //   } else if ((document.body) && (document.body.clientHeight)) {
-    //     height = document.body.clientHeight;
-    //   }
-
-    //   return height;
-
-    // }
-
     function parseQueryString(url) {
 
       url = new String(url);
+      console.log(url);
       var queryStringValues = new Object(),
         querystring = url.substring((url.indexOf('?') + 1), url.length),
         querystringSplit = querystring.split('&');
@@ -120,7 +82,7 @@
 
         queryStringValues[name] = value;
       }
-
+      console.log(queryStringValues);
       return queryStringValues;
 
     }
@@ -129,28 +91,6 @@
         window.setInterval(publishHeight, 300);
     }
     
-    $(function() {
-    
-        var $content = $("#content");
-    
-        function toggleFontSize() {
-        
-            if ($content.css("font-size") == "22px") {
-                $("#content").animate({
-                    fontSize: "15px"
-                });
-            } else {
-                $("#content").animate({
-                    fontSize: "22px"
-                });
-            }
-        
-        }
-        
-        var int = setInterval(toggleFontSize, 5000);
-    
-    });
-
   </script>
 </head>
 
