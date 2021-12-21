@@ -15,31 +15,24 @@
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>React App</title>
   <script>
-    function publishHeight() {
-      getBodyHeight();
-     
-    }
+   
+    function getIFrameHeight() {
+      let kekaHireIFrameHeight = 0;
+      let height = document.body.scrollHeight;
+      if (height && kekaHireIFrameHeight != height) {
+        kekaHireIFrameHeight = height;
 
-    
+        const message = JSON.stringify({
+         kekaHireIFrameHeight: height,
+        });
 
-    function getBodyHeight() {
+        window.parent.postMessage(message, '*');
 
-      let height;
-      if (document.body.scrollHeight) {
-        height = document.body.scrollHeight;
       }
-
-      const message = JSON.stringify({
-         height,
-      });
-
-      window.parent.postMessage(message, '*');
-
     }
-
 
     window.onload = function (event) {
-      window.setTimeout(publishHeight, 700);
+      window.setInterval(getIFrameHeight, 1000);
     }
 
   </script>
