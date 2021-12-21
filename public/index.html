@@ -21,13 +21,12 @@
       let height = document.body.scrollHeight;
       if (height && kekaHireIFrameHeight != height) {
         kekaHireIFrameHeight = height;
+        console.log(height);
 
         const message = JSON.stringify({
          kekaHireIFrameHeight: height,
         });
-
         window.parent.postMessage(message, '*');
-
       }
     }
 
