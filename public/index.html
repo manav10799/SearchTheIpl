@@ -17,14 +17,9 @@
   <script>
    
     function getIFrameHeight() {
-      let kekaHireIFrameHeight = 0;
-      let height = document.body.scrollHeight;
-      if (height && kekaHireIFrameHeight != height) {
-        kekaHireIFrameHeight = height;
-        console.log(height);
-
+      if (document.body.scrollHeight) {
         const message = JSON.stringify({
-         kekaHireIFrameHeight: height,
+         kekaHireIFrameHeight: document.body.scrollHeight,
         });
         window.parent.postMessage(message, '*');
       }
