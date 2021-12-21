@@ -16,7 +16,6 @@
   <title>React App</title>
   <script>
     function publishHeight() {
-      window.top.localStorage.setItem('manav', 'genius');
 
       if (window.location.hash.length == 0) return;
 
@@ -26,12 +25,11 @@
 
       var actualHeight = getBodyHeight();
       var currentHeight = 0;
-      // var currentHeight = getViewPortHeight();
 
       if (Math.abs(actualHeight - currentHeight) > 15) {
         var hostUrl = window.location.hash.substring(1);
         // console.log(hostUrl);
-        
+
         hostUrl += "#";
         hostUrl += 'frameId=' + frameId;
         hostUrl += '&';
@@ -61,9 +59,16 @@
 
       let height;
       if (document.body.scrollHeight) {
-          height = document.body.scrollHeight;
-          console.log(height);
-        }
+        height = document.body.scrollHeight;
+        console.log(height);
+      }
+
+      const message = JSON.stringify({
+         height,
+        date: Date.now(),
+      });
+
+      window.parent.postMessage(message, '*');
 
       return height;
     }
@@ -73,26 +78,17 @@
       url = new String(url);
       console.log(url);
       var queryStringValues = new Object();
-      //   querystring = url.substring((url.indexOf('?') + 1), url.length),
-      //   querystringSplit = querystring.split('&');
 
-      // for (i = 0; i < querystringSplit.length; i++) {
-      //   var pair = querystringSplit[i].split('='),
-      //     name = pair[0],
-      //     value = pair[1];
-
-      //   queryStringValues[name] = value;
-      // }
       queryStringValues['frameId'] = url.split('frameId=')[1];
       console.log(queryStringValues);
       return queryStringValues;
 
     }
 
-    window.onload = function(event) {
-        window.setInterval(publishHeight, 300);
+    window.onload = function (event) {
+      window.setInterval(publishHeight, 300);
     }
-    
+
   </script>
 </head>
 
