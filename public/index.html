@@ -71,17 +71,18 @@
 
       url = new String(url);
       console.log(url);
-      var queryStringValues = new Object(),
-        querystring = url.substring((url.indexOf('?') + 1), url.length),
-        querystringSplit = querystring.split('&');
+      var queryStringValues = new Object();
+      //   querystring = url.substring((url.indexOf('?') + 1), url.length),
+      //   querystringSplit = querystring.split('&');
 
-      for (i = 0; i < querystringSplit.length; i++) {
-        var pair = querystringSplit[i].split('='),
-          name = pair[0],
-          value = pair[1];
+      // for (i = 0; i < querystringSplit.length; i++) {
+      //   var pair = querystringSplit[i].split('='),
+      //     name = pair[0],
+      //     value = pair[1];
 
-        queryStringValues[name] = value;
-      }
+      //   queryStringValues[name] = value;
+      // }
+      queryStringValues['frameId'] = url.split('frameId=')[1];
       console.log(queryStringValues);
       return queryStringValues;
 
