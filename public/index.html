@@ -14,22 +14,6 @@
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>React App</title>
-  <script>
-   
-    function getIFrameHeight() {
-      if (document.body.scrollHeight) {
-        const message = JSON.stringify({
-         kekaHireIFrameHeight: document.body.scrollHeight,
-        });
-        window.parent.postMessage(message, '*');
-      }
-    }
-
-    window.onload = function (event) {
-      window.setInterval(getIFrameHeight, 1000);
-    }
-
-  </script>
 </head>
 
 <body>
